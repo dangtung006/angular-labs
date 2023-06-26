@@ -1,0 +1,47 @@
+<div>
+  <h1 [innerHtml]="title"></h1>
+  <div>
+      <img [src]="imgSrc" alt="">
+      <p>{{post}}</p>
+  </div>
+</div>
+
+<br/><br/>
+<h1>Tow way binding</h1>
+<input [(ngModel)]="animal"><span>{{ animal }}</span>
+
+<br/><br/>
+<h1>Template Reference Variable</h1>
+<input type="text" #pokemonName> <button (click)="handleClick(pokemonName.value)">Template Reference Variable</button>
+
+<br/><br/>
+<h1>NgIf</h1>
+<input type="text" value="" (input)="handleChange($event)"><span>{{inputVal}}</span>
+<ng-container *ngIf="inputVal.length; then pokemons; else noPokemons;"></ng-container>
+<ng-template #pokemons> 
+  <div> All pokemon available</div>  
+</ng-template>
+<ng-template #noPokemons> 
+  <div>
+    No pokemon available 
+  </div>
+</ng-template>
+
+<br/><br/>
+<h1>NgFor</h1>
+<table>
+    <thead>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Type</th>
+    </thead>
+    <tbody >
+        <tr *ngFor="let pk of myPokemons" [class.is-cool]="pk.isCool">
+            <td>{{ pk.id}}</td>
+            <td [ngStyle]="{'backgroundColor' : (pk.isCool ? '#800080' : '')}">{{ pk.name }}</td>
+            <td>{{ pk.type }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
