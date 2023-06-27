@@ -12,9 +12,9 @@ export class PokemonService {
 
   getPokemons(): Pokemon[]{
     return [
-      { id : 1, name : "Pikachu", type : "electric", isCool : true},
-      { id : 2, name : "Squirttle", type : "water", isCool : false},
-      { id : 3, name : "Charmander", type : "water", isCool : false }
+      { id : 1, name : "Pikachu", type : "electric", isCool : true, acceptTerms : true},
+      { id : 2, name : "Squirttle", type : "water", isCool : false, acceptTerms : true},
+      { id : 3, name : "Charmander", type : "water", isCool : false, acceptTerms : true  }
     ]
   }
   getPokemonsApi() : Observable<Pokemon[]>{

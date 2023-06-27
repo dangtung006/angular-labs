@@ -9,9 +9,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class PokemonListComponent implements OnInit {
     pokemons : Pokemon[] = [];
 
-    constructor(private pokemonService : PokemonService){
-
-    }
+    constructor(private pokemonService : PokemonService){}
 
     ngOnInit(): void {
       this.pokemons = this.pokemonService.getPokemons();
