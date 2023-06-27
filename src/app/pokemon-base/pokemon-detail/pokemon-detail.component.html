@@ -1,1 +1,13 @@
-<p>pokemon-detail works!</p>
+
+    <td class="pokemon-td">
+        {{detail.id}}
+    </td>
+  
+    <td class="pokemon-td"
+        [class.cool-bool]="detail.isCool">
+      {{detail.name}}
+    </td>
+    <td class="pokemon-td">
+        <button (click)="onRemove()">Remove</button>
+    </td>
+    <!-- <button [routerLink]="['/pokemon', detail.id]">Details</button> -->

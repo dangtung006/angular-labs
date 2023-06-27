@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 //Components
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
+import { PokemonService } from '../services/pokemon.service';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,9 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
         PokemonListComponent,
         PokemonDetailComponent,
     ],
-    providers: [],
+    providers: [
+        PokemonService
+    ],
     bootstrap: []
 })
 export class PokemonBaseModule { }

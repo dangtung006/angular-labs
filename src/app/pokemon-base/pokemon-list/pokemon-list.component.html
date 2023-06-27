@@ -1,13 +1,16 @@
 <table>
     <thead>
-        <th>Name</th>
         <th>Index</th>
+        <th>Name</th>
+        <th>action</th>
     </thead>
+
     <tbody>
-      <!-- <app-pokemon-detail 
-        *ngFor="let pokemon of pokemons"
-        [detail]="pokemon"
-        (remove)="handleRemove($event)"><h1 #contentRef>{{ pokemon.name }}</h1>
-      </app-pokemon-detail>   -->
+      <tr *ngFor="let pokemon of pokemons">
+        <app-pokemon-detail 
+          [detail]="pokemon"
+          (remove)="handleRemove($event)">
+        </app-pokemon-detail>  
+      </tr>
     </tbody>
-  </table>
+</table>
