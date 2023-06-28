@@ -8,7 +8,18 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
 import { PokemonService } from '../services/pokemon.service';
 import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
+const routes: Routes = [
+    {
+      path: '',
+      children: [
+        { path: '', component: PokemonListComponent },
+        { path: ':id', component: PokemonFormComponent }
+        // { path: 'form', component: PokemonFormComponent },
+      ]
+    }
+  ];
 @NgModule({
     declarations: [
         PokemonListComponent,
@@ -19,11 +30,13 @@ import { FormsModule } from '@angular/forms';
         CommonModule,
         HttpClientModule,
         FormsModule,
+        RouterModule.forChild(routes)
     ],
     exports: [
         PokemonListComponent,
         PokemonDetailComponent,
-        PokemonFormComponent
+        PokemonFormComponent,
+        RouterModule
     ],
     providers: [
         PokemonService
