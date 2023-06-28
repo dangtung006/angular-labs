@@ -4,14 +4,20 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PokemonBaseModule } from './pokemon-base/pokemon-base.module';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './notFound/notFound.component';
+import { AppRoutesModule } from './appRoutes/appRoutes.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [		
+      AppComponent,
+      HomeComponent,
+      NotFoundComponent
+   ],
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutesModule,
     PokemonBaseModule
   ],
   providers: [],
