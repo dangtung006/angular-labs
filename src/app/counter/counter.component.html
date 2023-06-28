@@ -1,0 +1,10 @@
+    <div>
+      <button class="pointer" (click)="decrement()">-</button>
+        <span style="margin : 0 10px">Count : {{value$ | async }}</span>
+      <button class="pointer" (click)="increment()">+</button>
+    </div>
+    
+    <div>
+      <p>You have pressed Inc button : {{incCount$ | async }} times</p>
+      <p>You have pressed Dec button : {{decCount$ | async }} times</p>
+    </div>
